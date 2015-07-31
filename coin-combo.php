@@ -10,7 +10,7 @@
 	session_start();
 
 	//given coin array
-	$coin_combo = array(1,10,25);
+	$coin_combo = array(1,5,10,25,50);
 
 	//user input to calculate the combination of coins
 	$user_input = 100;
