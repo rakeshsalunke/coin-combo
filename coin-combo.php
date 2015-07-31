@@ -10,7 +10,7 @@
 	session_start();
 
 	//given coin array
-	$coin_combo = array(1,5,10,25,50);
+	$coin_combo = array(1,10,25);
 
 	//user input to calculate the combination of coins
 	$user_input = 100;
@@ -42,11 +42,20 @@
 
 				$cell_data = $data.'  '.$all_coin_combo[$current_coin].'x'.$i;
 
-				$next_coin_index = $current_coin+1;
+				for($forAllCount=$current_coin+1; $forAllCount<=count($all_coin_combo); $forAllCount++){
 
-				$next_coin_max_itr = floor($check_for_zero/$all_coin_combo[$next_coin_index]);
 
-				getCoinCombo($check_for_zero, $all_coin_combo,$next_coin_index,$next_coin_max_itr,$cell_data);
+					$next_coin_index = $forAllCount;
+
+					$next_coin_max_itr = floor($check_for_zero/$all_coin_combo[$next_coin_index]);
+
+					getCoinCombo($check_for_zero, $all_coin_combo,$next_coin_index,$next_coin_max_itr,$cell_data);
+
+
+				}
+				
+
+
 
 			}else{
 				//kuch mat kar bus chill mar :)
